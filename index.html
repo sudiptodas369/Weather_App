@@ -8,7 +8,7 @@
     <title>Weather_App</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="#cont">
         <div class="left-info">
             <div class="pic-gradient"></div>
             <div class="today-info">
@@ -71,9 +71,20 @@
     
     async function checkWeather(city){
         statement = [`please enter correct city name`]
+        none = [` `]
         const response = await fetch(apiUrl + city + `&appid=${apikey}`);
         if (response.status == 404){
             document.querySelector(".city").innerHTML = statement;
+            document.querySelector(".day").innerHTML = none;
+            document.querySelector(".date").innerHTML = none;
+            document.querySelector(".weather-temp").innerHTML = none;
+            document.querySelector("#humidity").innerHTML = "0%";
+            document.querySelector("#wind").innerHTML = "0 km/h";
+            document.querySelector("#temp_min").innerHTML = "0 °C";
+            document.querySelector("#temp_max").innerHTML = "0 °C";
+            document.querySelector("#feels_like").innerHTML = "0 °C";
+            document.querySelector(".weather").innerHTML =  none
+
 
         }
         else{
