@@ -59,8 +59,8 @@
     const date = c.getDate()
     const yr = c.getFullYear()
     const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"];
-    const daydata = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
-    const values = [ `${date}, ${month[d-1]} ${yr}`]
+    const daydata = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    const values = [ `${date}, ${month[m]} ${yr}`]
 
 
     const apikey =  "6bf92d6021de90dfd3da899d7f2460de";
@@ -90,7 +90,7 @@
         else{
             let data = await response.json();
             document.querySelector(".city").innerHTML = data.name;
-            document.querySelector(".day").innerHTML = daydata[d-1]
+            document.querySelector(".day").innerHTML = daydata[d]
             document.querySelector(".date").innerHTML = values
             document.querySelector(".weather-temp").innerHTML = Math.round(data.main.temp) + "°C";
             document.querySelector("#humidity").innerHTML = data.main.humidity + "%";
