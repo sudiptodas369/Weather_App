@@ -87,6 +87,18 @@
 
 
         }
+        else if(response.status == 400){
+             document.querySelector(".city").innerHTML = [`Weather App`];
+             document.querySelector(".day").innerHTML = none;
+             document.querySelector(".date").innerHTML = none;
+             document.querySelector(".weather-temp").innerHTML = none;
+             document.querySelector("#humidity").innerHTML = "0%";
+            document.querySelector("#wind").innerHTML = "0 km/h";
+            document.querySelector("#temp_min").innerHTML = "0 °C";
+            document.querySelector("#temp_max").innerHTML = "0 °C";
+            document.querySelector("#feels_like").innerHTML = "0 °C";
+            document.querySelector(".weather").innerHTML =  none
+        }
         else{
             let data = await response.json();
             document.querySelector(".city").innerHTML = data.name;
